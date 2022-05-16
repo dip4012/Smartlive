@@ -1,0 +1,30 @@
+mat-dialog-content {
+  width: 100%;
+  font-size: larger;
+}
+
+mat-form-field {
+  width: 47.5%;
+}
+
+.spacer {
+  margin-right: 5%;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-icon {
+  color: grey;
+}
+
+.input-btn {
+  margin-right: 8px;
+}
+
+.action-btn {
+  width: 120px;
+  font-size: larger;
+}

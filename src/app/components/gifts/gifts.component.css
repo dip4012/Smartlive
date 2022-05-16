@@ -1,0 +1,29 @@
+.searchbar-container,
+.table-container {
+  padding: 16px;
+}
+
+.searchbar {
+  font-size: 25px;
+  width: 80%;
+  align-items: center;
+}
+
+.search-icon {
+  font-size: 25px;
+}
+
+.new-user-button {
+  width: calc(20% - 16px);
+  margin-left: 16px;
+}
+
+table {
+  width: 100%;
+  align-items: center;
+}
+
+th,
+td {
+  font-size: 15px;
+}

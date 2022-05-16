@@ -1,0 +1,96 @@
+<div class="searchbar-container">
+  <mat-form-field class="searchbar">
+    <mat-icon matPrefix class="search-icon">search</mat-icon>
+    <input
+      matInput
+      [(ngModel)]="value"
+      autocomplete="off"
+      placeholder="Search"
+      (keyup)="applyFilter($event)"
+      #input
+    />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    class="new-user-button"
+    (click)="createUser()"
+  >
+    Add User
+  </button>
+</div>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Serial No. Column -->
+    <ng-container matColumnDef="serial">
+      <th mat-header-cell *matHeaderCellDef>Serial No.</th>
+      <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+    </ng-container>
+
+    <!-- Image Column -->
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef>Image</th>
+      <td mat-cell *matCellDef="let element">
+        <img [src]="element.image" alt="profile image" />
+      </td>
+    </ng-container>
+
+    <!-- ID Number Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID Number</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Balance Column -->
+    <ng-container matColumnDef="balance">
+      <th mat-header-cell *matHeaderCellDef>Balance</th>
+      <td mat-cell *matCellDef="let element">{{ element.balance }}</td>
+    </ng-container>
+
+    <!-- Receive Column -->
+    <ng-container matColumnDef="received">
+      <th mat-header-cell *matHeaderCellDef>Received</th>
+      <td mat-cell *matCellDef="let element">{{ element.received }}</td>
+    </ng-container>
+
+    <!-- Is Free Column -->
+    <ng-container matColumnDef="isFree">
+      <th mat-header-cell *matHeaderCellDef>Is Free</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-slide-toggle
+          color="primary"
+          [checked]="element.block ? 'true' : 'false'"
+        >
+        </mat-slide-toggle>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="edit(element.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(element.id)">
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 15, 20]"
+    showFirstLastButtons
+    class="mat-elevation-z8"
+  >
+  </mat-paginator>
+</div>

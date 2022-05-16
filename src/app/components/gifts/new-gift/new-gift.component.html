@@ -1,0 +1,57 @@
+<h1 mat-dialog-title *ngIf="!data">New Gift</h1>
+<h1 mat-dialog-title *ngIf="data">Update Gift</h1>
+<mat-dialog-content>
+  <form [formGroup]="newGift">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Coins</mat-label>
+        <input type="number" matInput formControlName="coins" required />
+        <mat-icon matSuffix class="input-btn">toll</mat-icon>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input matInput formControlName="category" />
+        <mat-icon matSuffix class="input-btn">category</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Block</mat-label>
+        <input matInput [matDatepicker]="dp" formControlName="block" />
+        <mat-datepicker-toggle matSuffix [for]="dp">
+          <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <mat-form-field appearence="outline">
+        <mat-label>Image</mat-label>
+        <input matInput style="display: none" />
+        <mat-icon matSuffix style="margin-right: 16px">image</mat-icon>
+        <span style="margin-right: 64px"></span>
+        <input type="file" formControlName="image" />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button color="accent" mat-dialog-close class="action-btn">
+    Close
+  </button>
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="newGift.invalid"
+    class="action-btn"
+    (click)="addGift()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

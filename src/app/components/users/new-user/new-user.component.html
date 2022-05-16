@@ -1,0 +1,89 @@
+<h1 mat-dialog-title *ngIf="!data">New User</h1>
+<h1 mat-dialog-title *ngIf="data">Update User</h1>
+<mat-dialog-content>
+  <form [formGroup]="newUser">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-icon matSuffix class="input-btn">account_circle</mat-icon>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <mat-form-field appearance="outline">
+        <mat-label>ID Number</mat-label>
+        <input matInput formControlName="id" />
+        <mat-icon matSuffix class="input-btn">person_pin</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Balance</mat-label>
+        <input matInput formControlName="balance" required />
+        <mat-icon matSuffix class="input-btn">account_balance_wallet</mat-icon>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Received</mat-label>
+        <input matInput formControlName="received" />
+        <mat-icon matSuffix class="input-btn">savings</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-icon matSuffix class="input-btn">contact_mail</mat-icon>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Facebook</mat-label>
+        <input matInput formControlName="facebook" />
+        <mat-icon matSuffix class="input-btn">facebook</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Block</mat-label>
+        <input matInput [matDatepicker]="dp" formControlName="block" />
+        <mat-datepicker-toggle matSuffix [for]="dp">
+          <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <mat-form-field appearence="outline">
+        <mat-label>Image</mat-label>
+        <input matInput style="display: none" />
+        <mat-icon matSuffix style="margin-right: 16px">image</mat-icon>
+        <span style="margin-right: 64px"></span>
+        <input type="file" formControlName="image" />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button color="accent" mat-dialog-close class="action-btn">
+    Close
+  </button>
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="newUser.invalid"
+    class="action-btn"
+    (click)="addUser()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>
