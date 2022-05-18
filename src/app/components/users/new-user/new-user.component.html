@@ -3,10 +3,26 @@
 <mat-dialog-content>
   <form [formGroup]="newUser">
     <div>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width: 100%">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" required />
         <mat-icon matSuffix class="input-btn">account_circle</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['name'].touched && newUser.controls['name'].errors?.['required']"
+          >Please enter your name</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" required />
+        <mat-icon matSuffix class="input-btn">contact_phone</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['phone'].touched && newUser.controls['phone'].errors?.['required']"
+          >Please enter your phone number</mat-error
+        >
       </mat-form-field>
 
       <span class="spacer"></span>
@@ -14,7 +30,11 @@
       <mat-form-field appearance="outline">
         <mat-label>ID Number</mat-label>
         <input matInput formControlName="id" />
-        <mat-icon matSuffix class="input-btn">person_pin</mat-icon>
+        <mat-icon matSuffix class="input-btn">badge</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['id'].touched && newUser.controls['id'].errors?.['required']"
+          >Please enter your ID number</mat-error
+        >
       </mat-form-field>
     </div>
 
@@ -23,6 +43,10 @@
         <mat-label>Balance</mat-label>
         <input matInput formControlName="balance" required />
         <mat-icon matSuffix class="input-btn">account_balance_wallet</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['balance'].touched && newUser.controls['balance'].errors?.['required']"
+          >Please enter your balance</mat-error
+        >
       </mat-form-field>
 
       <span class="spacer"></span>
@@ -31,14 +55,22 @@
         <mat-label>Received</mat-label>
         <input matInput formControlName="received" />
         <mat-icon matSuffix class="input-btn">savings</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['received'].touched && newUser.controls['received'].errors?.['required']"
+          >Please enter your receive amount</mat-error
+        >
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
+        <mat-label>Gmail</mat-label>
         <input matInput formControlName="email" required />
         <mat-icon matSuffix class="input-btn">contact_mail</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['email'].touched && newUser.controls['email'].errors?.['required']"
+          >Please enter your Gmail</mat-error
+        >
       </mat-form-field>
 
       <span class="spacer"></span>
@@ -47,6 +79,10 @@
         <mat-label>Facebook</mat-label>
         <input matInput formControlName="facebook" />
         <mat-icon matSuffix class="input-btn">facebook</mat-icon>
+        <mat-error
+          *ngIf="newUser.controls['facebook'].touched && newUser.controls['facebook'].errors?.['required']"
+          >Please enter your facebook ID</mat-error
+        >
       </mat-form-field>
     </div>
 
@@ -59,6 +95,10 @@
         </mat-datepicker-toggle>
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker #dp></mat-datepicker>
+        <mat-error
+          *ngIf="newUser.controls['block'].touched && newUser.controls['block'].errors?.['required']"
+          >Please select block date</mat-error
+        >
       </mat-form-field>
 
       <span class="spacer"></span>

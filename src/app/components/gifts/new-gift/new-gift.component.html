@@ -5,15 +5,15 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Coins</mat-label>
-        <input type="number" matInput formControlName="coins" required />
+        <input matInput formControlName="coins" required />
         <mat-icon matSuffix class="input-btn">toll</mat-icon>
       </mat-form-field>
 
       <span class="spacer"></span>
 
       <mat-form-field appearance="outline">
-        <mat-label>Category</mat-label>
-        <input matInput formControlName="category" />
+        <mat-label>Level</mat-label>
+        <input matInput formControlName="level" />
         <mat-icon matSuffix class="input-btn">category</mat-icon>
       </mat-form-field>
     </div>
@@ -31,12 +31,16 @@
 
       <span class="spacer"></span>
 
-      <mat-form-field appearence="outline">
+      <mat-form-field appearance="outline">
         <mat-label>Image</mat-label>
-        <input matInput style="display: none" />
-        <mat-icon matSuffix style="margin-right: 16px">image</mat-icon>
-        <span style="margin-right: 64px"></span>
-        <input type="file" formControlName="image" />
+        <mat-select formControlName="image">
+          <mat-option>Clear</mat-option>
+          <mat-option value="beginner" class="yellow"> Beginner </mat-option>
+          <mat-option value="intermediate" class="green"
+            >Intermediate</mat-option
+          >
+          <mat-option value="advanced" class="red">Advanced</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </form>

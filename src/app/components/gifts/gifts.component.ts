@@ -15,9 +15,23 @@ export class GiftsComponent implements OnInit {
   public dataSource = new MatTableDataSource([
     {
       id: '564654654',
-      image: '',
+      image: 'beginner',
       coins: 5,
-      category: 'Sunday special',
+      level: 3,
+      isFree: true,
+    },
+    {
+      id: '564654654',
+      image: 'advanced',
+      coins: 5,
+      level: 2,
+      isFree: true,
+    },
+    {
+      id: '564654654',
+      image: 'intermediate',
+      coins: 5,
+      level: 1,
       isFree: true,
     },
   ]);
@@ -26,7 +40,7 @@ export class GiftsComponent implements OnInit {
     'serial',
     'image',
     'coins',
-    'category',
+    'level',
     'isFree',
     'actions',
   ];

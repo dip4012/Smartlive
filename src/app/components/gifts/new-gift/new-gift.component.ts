@@ -14,7 +14,21 @@ export class NewGiftComponent implements OnInit {
   gifts = [
     {
       id: '564654654',
-      image: '',
+      image: 'beginner',
+      coins: 5,
+      category: 'Sunday special',
+      isFree: true,
+    },
+    {
+      id: '564654654',
+      image: 'advanced',
+      coins: 5,
+      category: 'Sunday special',
+      isFree: true,
+    },
+    {
+      id: '564654654',
+      image: 'intermediate',
       coins: 5,
       category: 'Sunday special',
       isFree: true,
@@ -33,8 +47,8 @@ export class NewGiftComponent implements OnInit {
     this.newGift = this.fb.group({
       image: ['', Validators.required],
       coins: ['', Validators.required],
-      category: ['', Validators.required],
-      block: ['', Validators.required],
+      level: ['', Validators.required],
+      block: [''],
     });
 
     if (this.data)

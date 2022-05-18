@@ -1,0 +1,45 @@
+.content-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+mat-form-field {
+  font-size: larger;
+}
+
+.card {
+  width: 50%;
+  min-width: 400px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  padding-left: 8px;
+}
+
+button {
+  width: 128px;
+}
+
+.input-icon {
+  color: grey;
+}
+
+.action-btn {
+  font-size: 18px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}

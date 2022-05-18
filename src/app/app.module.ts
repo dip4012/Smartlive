@@ -18,6 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +32,9 @@ import { GiftsComponent } from './components/gifts/gifts.component';
 import { NewGiftComponent } from './components/gifts/new-gift/new-gift.component';
 import { DeleteUserComponent } from './components/users/delete-user/delete-user.component';
 import { DeleteGiftComponent } from './components/gifts/delete-gift/delete-gift.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { RechargeComponent } from './components/recharge/recharge.component';
+import { LevelsComponent } from './components/levels/levels.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +46,9 @@ import { DeleteGiftComponent } from './components/gifts/delete-gift/delete-gift.
     NewGiftComponent,
     DeleteUserComponent,
     DeleteGiftComponent,
+    BannerComponent,
+    RechargeComponent,
+    LevelsComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +68,9 @@ import { DeleteGiftComponent } from './components/gifts/delete-gift/delete-gift.
     MatRadioModule,
     MatDatepickerModule,
     MatSnackBarModule,
+    MatSelectModule,
+    MatCardModule,
+    MatDividerModule,
     FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,

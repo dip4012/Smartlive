@@ -3,6 +3,10 @@ mat-dialog-content {
   font-size: larger;
 }
 
+div {
+  margin-bottom: 8px;
+}
+
 mat-form-field {
   width: 47.5%;
 }

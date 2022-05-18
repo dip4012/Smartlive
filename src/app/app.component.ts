@@ -40,4 +40,16 @@ export class AppComponent {
   toGifts() {
     this.router.navigate(['gifts'], { relativeTo: this.activatedRoute });
   }
+
+  toRecharge() {
+    this.router.navigate(['recharge'], { relativeTo: this.activatedRoute });
+  }
+
+  toLevels() {
+    this.router.navigate(['levels'], { relativeTo: this.activatedRoute });
+  }
+
+  toBanner() {
+    this.router.navigate(['banner'], { relativeTo: this.activatedRoute });
+  }
 }

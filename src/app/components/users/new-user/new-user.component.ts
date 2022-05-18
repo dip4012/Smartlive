@@ -74,6 +74,7 @@ export class NewUserComponent implements OnInit {
     this.newUser = this.fb.group({
       name: ['', Validators.required],
       id: ['', Validators.required],
+      phone: ['', Validators.required],
       balance: ['', Validators.required],
       received: ['', Validators.required],
       email: ['', Validators.required],

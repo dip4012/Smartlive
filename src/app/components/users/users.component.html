@@ -1,3 +1,13 @@
+<mat-toolbar color="accent" class="mat-elevation-z8 content-header">
+  <span
+    style="
+      font-size: 2.5rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    "
+    >Users</span
+  >
+</mat-toolbar>
+
 <div class="searchbar-container">
   <mat-form-field class="searchbar">
     <mat-icon matPrefix class="search-icon">search</mat-icon>
@@ -86,6 +96,12 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="7">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
   </table>
   <mat-paginator
     [pageSizeOptions]="[5, 10, 15, 20]"

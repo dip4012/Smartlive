@@ -34,24 +34,6 @@ td {
   font-weight: bolder;
 }
 
-.image {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-}
-
-.red {
-  background-color: rgba(255, 0, 0, 0.67);
-}
-
-.green {
-  background-color: rgba(58, 216, 23, 0.763);
-}
-
-.yellow {
-  background-color: rgba(255, 183, 38, 0.856);
-}
-
-.w-75 {
-  width: 16.67%;
+.w-25 {
+  width: 25%;
 }
