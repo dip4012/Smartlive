@@ -1,20 +1,24 @@
 <h1 mat-dialog-title *ngIf="!data">New Gift</h1>
 <h1 mat-dialog-title *ngIf="data">Update Gift</h1>
 <mat-dialog-content>
-  <form [formGroup]="newGift">
-    <div class="form-half left-half">
+  <form [formGroup]="newLevel">
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Coins</mat-label>
         <input matInput formControlName="coins" required />
         <mat-icon matSuffix class="input-btn">toll</mat-icon>
       </mat-form-field>
 
+      <span class="spacer"></span>
+
       <mat-form-field appearance="outline">
-        <mat-label>Category</mat-label>
-        <input matInput formControlName="category" />
+        <mat-label>Level</mat-label>
+        <input matInput formControlName="level" />
         <mat-icon matSuffix class="input-btn">category</mat-icon>
       </mat-form-field>
+    </div>
 
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Block</mat-label>
         <input matInput [matDatepicker]="dp" formControlName="block" />
@@ -24,31 +28,19 @@
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker #dp></mat-datepicker>
       </mat-form-field>
-    </div>
 
-    <div class="form-half">
-      <div class="preview-image">
-        <img
-          [src]="newGift.controls['imageSrc'].value.toString()"
-          alt="review-image"
-          width="100%"
-          height="100%"
-          *ngIf="newGift.controls['imageSrc'].value"
-        />
-        <mat-icon *ngIf="!newGift.controls['imageSrc'].value" style="width: 10%"
-          ><span class="material-symbols-outlined"> landscape </span></mat-icon
-        >
-      </div>
+      <span class="spacer"></span>
 
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Image</mat-label>
-        <input matInput style="display: none" />
-        <span style="margin-right: 64px"></span>
-        <input
-          type="file"
-          formControlName="imageFile"
-          (change)="onFileChange($event)"
-        />
+        <mat-select formControlName="image">
+          <mat-option>Clear</mat-option>
+          <mat-option value="beginner" class="yellow"> Beginner </mat-option>
+          <mat-option value="intermediate" class="green"
+            >Intermediate</mat-option
+          >
+          <mat-option value="advanced" class="red">Advanced</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </form>
@@ -60,9 +52,9 @@
   <button
     mat-flat-button
     color="primary"
-    [disabled]="newGift.invalid"
+    [disabled]="newLevel.invalid"
     class="action-btn"
-    (click)="addGift()"
+    (click)="addLevel()"
   >
     Save
   </button>

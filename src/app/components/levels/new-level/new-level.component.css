@@ -4,20 +4,7 @@ mat-dialog-content {
 }
 
 mat-form-field {
-  width: 100%;
-}
-
-form {
-  display: flex;
-}
-
-.form-half {
-  display: inline;
   width: 47.5%;
-}
-
-.left-half {
-  margin-right: 5%;
 }
 
 .spacer {
@@ -56,23 +43,4 @@ mat-icon {
 
 .yellow {
   background-color: rgba(255, 183, 38, 0.856);
-}
-
-.preview-image {
-  background-color: beige;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: calc(198px - 23px);
-  margin-bottom: 11px;
-  border-radius: 4px;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 200, "opsz" 48;
-  font-size: 100%;
-  color: grey;
-  opacity: 0.5;
 }

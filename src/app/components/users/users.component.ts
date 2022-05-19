@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
   value = '';
   public dataSource = new MatTableDataSource([
     {
-      image: '',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       id: '123456789',
       name: 'John Doe',
       balance: 15914,
@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
       block: '',
     },
     {
-      image: '',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       id: '98798798797',
       name: 'John Doe',
       balance: 123456,
@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
       block: '',
     },
     {
-      image: '',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       id: '5646454645',
       name: 'John Doe',
       balance: 123456,
@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
       block: '',
     },
     {
-      image: '',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       id: '2331313213',
       name: 'John Doe',
       balance: 123456,
@@ -46,7 +46,7 @@ export class UsersComponent implements OnInit {
       block: '',
     },
     {
-      image: '',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       id: '59519519519',
       name: 'John Doe',
       balance: 123456,
@@ -54,7 +54,7 @@ export class UsersComponent implements OnInit {
       block: '',
     },
     {
-      image: '',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       id: '573573573575',
       name: 'John Doe',
       balance: 123456,

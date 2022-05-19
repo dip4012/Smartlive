@@ -34,22 +34,11 @@ td {
   font-weight: bolder;
 }
 
-.image {
-  width: 42px;
-  height: 42px;
+.profile-image {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-}
-
-.red {
-  background-color: rgba(255, 0, 0, 0.67);
-}
-
-.green {
-  background-color: rgba(58, 216, 23, 0.763);
-}
-
-.yellow {
-  background-color: rgba(255, 183, 38, 0.856);
+  margin: 8px 0;
 }
 
 .w-75 {

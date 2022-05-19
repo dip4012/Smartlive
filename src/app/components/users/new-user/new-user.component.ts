@@ -80,7 +80,8 @@ export class NewUserComponent implements OnInit {
       email: ['', Validators.required],
       facebook: ['', Validators.required],
       block: ['', Validators.required],
-      image: ['', Validators.required],
+      imageFile: ['', Validators.required],
+      imageSrc: ['', Validators.required],
     });
 
     if (this.data) {
@@ -90,10 +91,23 @@ export class NewUserComponent implements OnInit {
     }
   }
 
+  onFileChange(event: any) {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        this.newUser.patchValue({ imageSrc: reader.result });
+      };
+    }
+  }
+
   addUser(): void {
     if (this.data) {
       console.log(this.newUser.value);
-      this.utils.openSnackBar('User Update Successfully', 'Success');
+      this.utils.openSnackBar('User Updated Successfully', 'Success');
       this.dialogRef.close(true);
       this.utils.reloadUrl(this.router);
     } else {

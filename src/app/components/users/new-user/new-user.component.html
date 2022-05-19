@@ -2,8 +2,8 @@
 <h1 mat-dialog-title *ngIf="data">Update User</h1>
 <mat-dialog-content>
   <form [formGroup]="newUser">
-    <div>
-      <mat-form-field appearance="outline" style="width: 100%">
+    <div class="form-half left-half">
+      <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" required />
         <mat-icon matSuffix class="input-btn">account_circle</mat-icon>
@@ -12,9 +12,7 @@
           >Please enter your name</mat-error
         >
       </mat-form-field>
-    </div>
 
-    <div>
       <mat-form-field appearance="outline">
         <mat-label>Phone Number</mat-label>
         <input matInput formControlName="phone" required />
@@ -24,8 +22,6 @@
           >Please enter your phone number</mat-error
         >
       </mat-form-field>
-
-      <span class="spacer"></span>
 
       <mat-form-field appearance="outline">
         <mat-label>ID Number</mat-label>
@@ -38,7 +34,7 @@
       </mat-form-field>
     </div>
 
-    <div>
+    <div class="form-half">
       <mat-form-field appearance="outline">
         <mat-label>Balance</mat-label>
         <input matInput formControlName="balance" required />
@@ -49,8 +45,6 @@
         >
       </mat-form-field>
 
-      <span class="spacer"></span>
-
       <mat-form-field appearance="outline">
         <mat-label>Received</mat-label>
         <input matInput formControlName="received" />
@@ -60,9 +54,7 @@
           >Please enter your receive amount</mat-error
         >
       </mat-form-field>
-    </div>
 
-    <div>
       <mat-form-field appearance="outline">
         <mat-label>Gmail</mat-label>
         <input matInput formControlName="email" required />
@@ -72,9 +64,9 @@
           >Please enter your Gmail</mat-error
         >
       </mat-form-field>
+    </div>
 
-      <span class="spacer"></span>
-
+    <div class="form-half left-half">
       <mat-form-field appearance="outline">
         <mat-label>Facebook</mat-label>
         <input matInput formControlName="facebook" />
@@ -84,9 +76,7 @@
           >Please enter your facebook ID</mat-error
         >
       </mat-form-field>
-    </div>
 
-    <div>
       <mat-form-field appearance="outline">
         <mat-label>Block</mat-label>
         <input matInput [matDatepicker]="dp" formControlName="block" />
@@ -101,15 +91,32 @@
         >
       </mat-form-field>
 
-      <span class="spacer"></span>
-
       <mat-form-field appearence="outline">
         <mat-label>Image</mat-label>
         <input matInput style="display: none" />
         <mat-icon matSuffix style="margin-right: 16px">image</mat-icon>
         <span style="margin-right: 64px"></span>
-        <input type="file" formControlName="image" />
+        <input
+          type="file"
+          formControlName="imageFile"
+          (change)="onFileChange($event)"
+        />
       </mat-form-field>
+    </div>
+
+    <div class="form-half">
+      <div class="preview-image">
+        <img
+          [src]="newUser.controls['imageSrc'].value.toString()"
+          alt="review-image"
+          width="100%"
+          height="100%"
+          *ngIf="newUser.controls['imageSrc'].value"
+        />
+        <mat-icon *ngIf="!newUser.controls['imageSrc'].value" style="width: 10%"
+          ><span class="material-symbols-outlined"> landscape </span></mat-icon
+        >
+      </div>
     </div>
   </form>
 </mat-dialog-content>

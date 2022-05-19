@@ -15,23 +15,23 @@ export class GiftsComponent implements OnInit {
   public dataSource = new MatTableDataSource([
     {
       id: '564654654',
-      image: 'beginner',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       coins: 5,
-      level: 3,
+      category: 3,
       isFree: true,
     },
     {
       id: '564654654',
-      image: 'advanced',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       coins: 5,
-      level: 2,
+      category: 2,
       isFree: true,
     },
     {
       id: '564654654',
-      image: 'intermediate',
+      imageSrc: 'https://picsum.photos/id/1/300/200',
       coins: 5,
-      level: 1,
+      category: 1,
       isFree: true,
     },
   ]);
@@ -40,7 +40,7 @@ export class GiftsComponent implements OnInit {
     'serial',
     'image',
     'coins',
-    'level',
+    'category',
     'isFree',
     'actions',
   ];
@@ -57,11 +57,11 @@ export class GiftsComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  createGift() {
+  addGift() {
     this.dialog.open(NewGiftComponent, { disableClose: true, width: '700px' });
   }
 
-  edit(id: string) {
+  editGift(id: string) {
     this.dialog.open(NewGiftComponent, {
       data: id,
       disableClose: true,
@@ -69,7 +69,7 @@ export class GiftsComponent implements OnInit {
     });
   }
 
-  delete(id: string) {
+  deleteGift(id: string) {
     this.dialog.open(DeleteGiftComponent, {
       data: id,
       disableClose: true,

@@ -1,5 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -45,9 +50,10 @@ export class NewGiftComponent implements OnInit {
 
   ngOnInit(): void {
     this.newGift = this.fb.group({
-      image: ['', Validators.required],
+      imageFile: ['', Validators.required],
+      imageSrc: ['', Validators.required],
       coins: ['', Validators.required],
-      level: ['', Validators.required],
+      category: ['', Validators.required],
       block: [''],
     });
 
@@ -57,10 +63,23 @@ export class NewGiftComponent implements OnInit {
       );
   }
 
+  onFileChange(event: any) {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        this.newGift.patchValue({ imageSrc: reader.result });
+      };
+    }
+  }
+
   addGift(): void {
     if (this.data) {
       console.log(this.newGift.value);
-      this.utils.openSnackBar('Gift Update Successfully', 'Success');
+      this.utils.openSnackBar('Gift Updated Successfully', 'Success');
       this.dialogRef.close(true);
       this.utils.reloadUrl(this.router);
     } else {

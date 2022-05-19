@@ -18,14 +18,14 @@
   margin-left: 16px;
 }
 
-table {
-  width: 100%;
-  align-items: center;
-}
-
 th,
 td {
-  font-size: 15px;
+  font-size: 16px;
+  text-align: center !important;
+}
+
+table {
+  width: 100%;
 }
 
 .content-header {
@@ -34,6 +34,25 @@ td {
   font-weight: bolder;
 }
 
-.w-25 {
-  width: 25%;
+.image {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 8px auto;
+}
+
+.red {
+  background-color: rgba(255, 0, 0, 0.67);
+}
+
+.green {
+  background-color: rgba(58, 216, 23, 0.763);
+}
+
+.yellow {
+  background-color: rgba(255, 183, 38, 0.856);
+}
+
+.w-75 {
+  width: 16.67%;
 }

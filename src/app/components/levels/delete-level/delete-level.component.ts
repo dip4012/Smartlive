@@ -4,23 +4,23 @@ import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
-  selector: 'app-delete-gift',
-  templateUrl: './delete-gift.component.html',
-  styleUrls: ['./delete-gift.component.css'],
+  selector: 'app-delete-level',
+  templateUrl: './delete-level.component.html',
+  styleUrls: ['./delete-level.component.css'],
 })
-export class DeleteGiftComponent implements OnInit {
+export class DeleteLevelComponent implements OnInit {
   constructor(
     private utils: UtilsService,
     private router: Router,
-    private dialogRef: MatDialogRef<DeleteGiftComponent>,
+    private dialogRef: MatDialogRef<DeleteLevelComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   ngOnInit(): void {}
 
-  deleteGift() {
+  deleteLevel() {
     this.dialogRef.close(true);
-    this.utils.openSnackBar('Gift Deleted', 'Success');
+    this.utils.openSnackBar('Level Deleted', 'Success');
     this.utils.reloadUrl(this.router);
   }
 }

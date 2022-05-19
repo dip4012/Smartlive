@@ -35,6 +35,10 @@ import { DeleteGiftComponent } from './components/gifts/delete-gift/delete-gift.
 import { BannerComponent } from './components/banner/banner.component';
 import { RechargeComponent } from './components/recharge/recharge.component';
 import { LevelsComponent } from './components/levels/levels.component';
+import { NewBannerComponent } from './components/banner/new-banner/new-banner.component';
+import { DeleteBannerComponent } from './components/banner/delete-banner/delete-banner.component';
+import { NewLevelComponent } from './components/levels/new-level/new-level.component';
+import { DeleteLevelComponent } from './components/levels/delete-level/delete-level.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,10 @@ import { LevelsComponent } from './components/levels/levels.component';
     BannerComponent,
     RechargeComponent,
     LevelsComponent,
+    NewBannerComponent,
+    DeleteBannerComponent,
+    NewLevelComponent,
+    DeleteLevelComponent,
   ],
   imports: [
     BrowserModule,

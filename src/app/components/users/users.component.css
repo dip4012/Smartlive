@@ -26,10 +26,18 @@ table {
 th,
 td {
   font-size: 15px;
+  text-align: center !important;
 }
 
 .content-header {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: larger;
   font-weight: bolder;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 8px 0;
 }

@@ -7,3 +7,63 @@
     >Banner</span
   >
 </mat-toolbar>
+
+<div class="container">
+  <button
+    mat-raised-button
+    color="primary"
+    class="new-banner-button"
+    (click)="addBanner()"
+  >
+    Add Banner
+  </button>
+</div>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Serial No. Column -->
+    <ng-container matColumnDef="serial">
+      <th mat-header-cell *matHeaderCellDef class="w-20">Serial No.</th>
+      <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+    </ng-container>
+
+    <!-- Image Column -->
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef class="w-60">Image</th>
+      <td mat-cell *matCellDef="let element">
+        <img
+          [src]="element.imageSrc"
+          alt="profile image"
+          class="banner"
+          width="95%"
+          height="400px"
+        />
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="w-20">Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="edit(element.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(element.id)">
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="7">No banner is added.</td>
+    </tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 15, 20]"
+    showFirstLastButtons
+    class="mat-elevation-z8"
+  >
+  </mat-paginator>
+</div>
